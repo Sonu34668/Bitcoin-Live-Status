@@ -32,15 +32,16 @@ function renderTable(data) {
       <td>${item.symbol}</td>
       <td>${item.id}</td>
       <td>${"$" + item.current_price}</td>
-      <td class="${percentageChangeClass}">${
+      <td class="${percentageChangeClass}">${ 
       item.price_change_percentage_24h
-    } %</td>
+    } %</td>  
+    
     <td>${"Mkt Cap : $"+item.total_volume}</td>
         `;
     tableBody.appendChild(row);
   });
 }
-
+// %sign added
 //search function
 document.getElementById('searchInput').addEventListener('keyup',event=>{
     const searchTerm=document.getElementById('searchInput').value.trim().toLowerCase();

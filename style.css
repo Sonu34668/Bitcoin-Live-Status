@@ -1,35 +1,53 @@
-/* <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-  {
-  "width": "1000",
-  "height": "490",
-  "defaultColumn": "overview",
-  "screener_type": "crypto_mkt",
-  "displayCurrency": "BTC",
-  "colorTheme": "dark",
-  "locale": "in",
-  "isTransparent": false
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  
 }
-  </script>
-</div>
-<!-- TradingView Widget END --> */
-*{
-    background-color: black;
-    color: white;
+
+table {
+  border-collapse: collapse;
 }
-.container.d-flex{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    overflow: auto;
+
+td {
+    /* letter-spacing: 0.4px; */
+  border-bottom: 1px solid white;
 }
-.table{
-    width: 100%;
-    
+
+#searchInput {
+  border: 1px solid grey;
+  background-color: black;
+  width: 30%;
+  padding: 10px;
+  margin: 15px 10px;
+  color: white;
+  border-radius: 5px;
 }
-.tr{
-    border-bottom: 5px solid white;
+
+button {
+  border: 1px solid grey;
+  background-color: black;
+  padding: 10px;
+  margin: 15px 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.positive-change{
+    color: greenyellow;
+}
+
+
+.negative-change{
+    color: red;
+}
+
+td{
+    min-width: 80px;
+    padding: 10px;
+}
+
+#cryptoTable{
+    margin-inline: auto;
 }

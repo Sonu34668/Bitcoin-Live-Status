@@ -2,97 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> -->
-   <link rel="stylesheet" href="./style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Document</title>
 </head>
 <body>
-    
-        <div class="search">
-            <form role="search">
-                <input class="form" type="search" placeholder="Search by symbol">
-                <button onclick="sortTable()">Sort By Mkt Cap</button>
-                <button onclick="sortTable1()">Sort By percentage</button>
-            </form>
-            </div>
-        </div>
-    </nav>
-    <table class="table" id="myTable">
-        <tbody>
-          <tr>
-            <td scope="col"><img src="https://img.freepik.com/free-vector/money_53876-25503.jpg?w=740&t=st=1687606536~exp=1687607136~hmac=f9b61dc631d6ccb53ee02c76ea7cf914d9a8bc1cd3008e268fc663ec25236f54" width="40px" height="40px"></td>
-            <td scope="col">Bitcoin</td>
-            <td scope="col" id="symbol">BTC</td>
-            <td scope="col">$20023</td>
-            <td scope="col">$28,534,462,145</td>
-            <td scope="col"id="id02"><a>3.79%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$382,801,405,357</p></td>
-          </tr>
-          <tr>
-            <td scope="col"><img src="https://cdn-icons-png.flaticon.com/512/303/303964.png?w=740&t=st=1687606911~exp=1687607511~hmac=e38b473ec2848480ff69249e8fcc4dc731586c76362c1fc1626480ce52df76ce" width="40px" height="40px"></td>
-            <td scope="col">Ethereum</td>
-            <td scope="col" id="symbol">ETH</td>
-            <td scope="col">$1354.77</td>
-            <td scope="col">$9,002,850,028</td>
-            <td scope="col" id="id02"><a>3.48%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$163,323,147,715</p></td>
-          </tr>
-          <tr>
-            <td scope="col"><img src="https://img.freepik.com/free-icon/tether_318-627090.jpg?size=626&ext=jpg&ga=GA1.1.119335564.1684543583&semt=sph" width="40px" height="40px"></td>
-            <td scope="col">Tether</td>
-            <td scope="col" id="symbol">USDT</td>
-            <td scope="col">$1.001</td>
-            <td scope="col">$33,471,352,657</td>
-            <td scope="col" id="id02"><a>-0.03%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$67,968,396,233</p></td>
-          </tr>
-          <tr>
-            <td scope="col"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" width="40px" height="40px"></td>
-            <td scope="col">BNB</td>
-            <td scope="col" id="symbol">BNB</td>
-            <td scope="col">$293.02</td>
-            <td scope="col">$362,136,764</td>
-            <td scope="col" id="id02"><a>2.19%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$47,697,282,647</p></td>
-          </tr>
-          <tr>
-            <td scope="col"><img src="data:image/png;base64,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" width="40px" height="40px"></td>
-            <td scope="col">USD Coin</td>
-            <td scope="col" id="symbol">USDC</td>
-            <td scope="col">$1</td>
-            <td scope="col">$3,277,543,643</td>
-            <td scope="col" id="id02"><a>0.01%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$47,095,350,153</p></td>
-          </tr>
-          <tr>
-            <td scope="col"><img src="https://cdn.iconscout.com/icon/free/png-256/free-xrp-5382349-4498221.png" width="40px" height="40px"></td>
-            <td scope="col">XRP</td>
-            <td scope="col" id="symbol">XRP</td>
-            <td scope="col">$0.474016</td>
-            <td scope="col">$1,839,526,667</td>
-            <td scope="col" id="id02"><a>4.98%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$23,426,798,467</p></td>
-          </tr>
-          <tr>
-            <td scope="col"><img src="https://logos-download.com/wp-content/uploads/2022/01/Binance_USD_BUSD_Logo.png" width="40px" height="40px"></td>
-            <td scope="col">Binance USD</td>
-            <td scope="col" id="symbol">BUSD</td>
-            <td scope="col">$1.001</td>
-            <td scope="col">$6,792,694,651</td>
-            <td scope="col" id="id02"><a>0.10%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$20,894,853,241</p></td>
-          </tr>
-          <tr>
-            <td scope="col"><img src="https://thumbs.dreamstime.com/z/cardano-ada-token-symbol-defi-project-cryptocurrency-logo-decentralized-finance-coin-icon-isolated-white-background-219784414.jpg" width="40px" height="40px"></td>
-            <td scope="col">Cardano</td>
-            <td scope="col" id="symbol">ADA</td>
-            <td scope="col">$0.432245</td>
-            <td scope="col">$396,719,844</td>
-            <td scope="col" id="id02"><a>1.71%</a></td>
-            <td scope="col" id="id01"><p>Mkt Cap:$14,621,316,672</p></td>
-          </tr>
-           </tbody>
-      </table>
-      <script src="./script.js"></script>
+    <div class="cont">
+        <input type="text" id="searchInput" placeholder="Search by Name or Symbol">
+        <button id="sortMarketCapButton">Sort by mkt cap</button>
+        <button id="sortPercentageChangeButton">Sort by Percentage</button>
+
+        <table id="cryptoTable">
+            <tbody id="tableBody">
+                <!-- Table Rows will be added here by JS -->
+            </tbody>
+
+        </table>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>

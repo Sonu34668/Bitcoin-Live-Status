@@ -34,7 +34,7 @@ function renderTable(data) {
       <td>${"$" + item.current_price}</td>
       <td class="${percentageChangeClass}">${
       item.price_change_percentage_24h
-    }</td>
+    } %</td>
     <td>${"Mkt Cap : $"+item.total_volume}</td>
         `;
     tableBody.appendChild(row);
